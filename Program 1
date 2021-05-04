@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<string.h>
+struct book
+{
+    char book_title[50];
+    int book_id; 
+    char author[50];
+    float price;
+};
+int main()
+{
+    struct book b1={"Mortal instruments",5515,"Cassandra Clare",560.75};
+    printf("Name of the book: %s\n",b1.book_title);
+    printf("Book ID is: %d\n",b1.book_id);
+    printf("Name of the author: %s\n",b1.author);
+    printf("Price of the book: %f\n",b1.price);
+}
