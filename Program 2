@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+struct node
+{
+    char book_title[10],author[10];
+    float price;
+    int no_pages;
+};
+typedef struct node nd;
+  
+int main()
+{
+    nd a[10];
+    int i,r,n,flag=0;
+    char key[10];
+    float p;
+    printf("Enter the number of books\n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+       printf("Enter the data\n");
+       scanf("%s %s %f %d",a[i].book_title,a[i].author,&(a[i].price),&(a[i].no_pages));
+       printf("%s %s %f %d \n",a[i].book_title,a[i].author,a[i].price,a[i].no_pages);
+    }
+    printf("Enter the Title and price of the book\n");
+    scanf("%s %f",key,&p);
+
+    for(r=0;r<n;r++)
+    {
+        if(strcmp(a[r].book_title,key))
+        {
+            a[r].price = p;
+            printf("Updation Sucessfull\n");
+            flag=1;
+            printf("%s %f \n",a[r].book_title,a[r].price);
+        }
+        
+    }
+    if(flag==0)
+      printf("Updation fails\n");
+}
+
